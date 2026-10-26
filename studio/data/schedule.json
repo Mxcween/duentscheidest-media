@@ -1,6 +1,30 @@
 [
- {"wann": "2026-10-27 18:00", "serie": "30 TAGE", "folge": "Teil 2", "status": "Skript fehlt", "id": "tage-teil2"},
- {"wann": "2026-10-27 19:00", "serie": "HOCHHAUS", "folge": "Tag 3", "status": "wartet auf Stimmen", "id": "hh-tag3"},
- {"wann": "2026-10-27 20:00", "serie": "BRUNO", "folge": "Teil 3", "status": "Skript wartet auf Go", "id": "bruno-teil3"},
- {"wann": "2026-10-28 18:00", "serie": "ZWEI VON IHR", "folge": "Teil 4", "status": "wartet auf Stimmen", "id": "zvi-teil4"}
+ {
+  "wann": "2026-10-27 18:00",
+  "serie": "30 TAGE",
+  "folge": "Teil 2",
+  "status": "сценарію ще нема",
+  "id": "tage-teil2"
+ },
+ {
+  "wann": "2026-10-27 19:00",
+  "serie": "HOCHHAUS",
+  "folge": "Tag 3",
+  "status": "чекає голосів",
+  "id": "hh-tag3"
+ },
+ {
+  "wann": "2026-10-27 20:00",
+  "serie": "BRUNO",
+  "folge": "Teil 3",
+  "status": "сценарій чекає «го»",
+  "id": "bruno-teil3"
+ },
+ {
+  "wann": "2026-10-28 18:00",
+  "serie": "ZWEI VON IHR",
+  "folge": "Teil 4",
+  "status": "чекає голосів",
+  "id": "zvi-teil4"
+ }
 ]

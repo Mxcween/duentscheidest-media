@@ -26,7 +26,7 @@ h2{font-size:16px;margin:28px 0 10px;color:var(--muted);text-transform:uppercase
 .chart{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px}
 .chart svg{display:block;width:100%;height:160px}
 .reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
-.reel{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex}
+.reel{text-decoration:none;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex}
 .reel img{width:96px;object-fit:cover;flex:none;background:#222}
 .reel .body{padding:10px 12px;flex:1;min-width:0}
 .reel .s{font-weight:800}
@@ -122,7 +122,7 @@ async function load(){
     if(ageH>=1&&ageH<=6&&r.aufrufe<100) s.appendChild(el('span','tag cold','слабко'));
     b.appendChild(s); b.appendChild(el('div','t',r.titel));
     const nums=el('div','nums');
-    for(const [k,v] of [['перегляди',fmt(r.aufrufe)],['лайки',fmt(r.likes)],['коменти',fmt(r.kommentare)],['поширення',fmt(r.geteilt)],['збереження',fmt(r.gespeichert)],['досмотр',r.durchsicht!=null?r.durchsicht+'% · '+r.watch_s+' с':'—']]){
+    for(const [k,v] of [['перегляди',fmt(r.aufrufe)],['лайки',fmt(r.likes)],['коменти',fmt(r.kommentare)],['поширення',fmt(r.geteilt)],['збереження',fmt(r.gespeichert)],['досмотр',r.durchsicht!=null?r.durchsicht+'%':'—']]){
       const d=el('div'); d.appendChild(el('b',null,v)); d.appendChild(el('span',null,k)); nums.appendChild(d)}
     b.appendChild(nums);
     const sv=r.stimmen||{}, tot=(sv.a||0)+(sv.b||0);
