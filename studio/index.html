@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0b0b0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Du entscheidest Studio</title>
+<style>
+:root{--bg:#0b0b0f;--panel:#15151c;--line:#26262f;--fg:#f2f2f5;--muted:#9a9aa6;--red:#e8342c;--a:#7aa2ff;--b:#f0a860;--ok:#4fc27a;--bad:#ff5c55}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:16px 16px 60px}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:6px 0 18px}
+h1{font-size:24px;margin:0;letter-spacing:.5px}
+h1 span{color:var(--red)}
+.stand{color:var(--muted);font-size:13px}
+h2{font-size:16px;margin:28px 0 10px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+.tile .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1px}
+.tile .v{font-size:30px;font-weight:800;margin-top:4px;font-variant-numeric:tabular-nums}
+.tile .d{font-size:13px;margin-top:2px}
+.up{color:var(--ok)}.down{color:var(--bad)}
+.chart{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px}
+.chart svg{display:block;width:100%;height:160px}
+.reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.reel{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex}
+.reel img{width:96px;object-fit:cover;flex:none;background:#222}
+.reel .body{padding:10px 12px;flex:1;min-width:0}
+.reel .s{font-weight:800}
+.reel .s small{color:var(--red);margin-left:6px;font-weight:700}
+.reel .t{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 8px;margin-top:8px;font-size:13px}
+.nums b{display:block;font-size:17px;font-variant-numeric:tabular-nums}
+.nums span{color:var(--muted);font-size:11px}
+.bar{height:8px;border-radius:4px;background:var(--line);overflow:hidden;margin-top:8px;display:flex}
+.bar i{display:block;height:100%}
+.vote{font-size:12px;color:var(--muted);margin-top:4px;display:flex;justify-content:space-between}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid currentColor;margin-left:6px}
+.hot{color:var(--ok)}.cold{color:var(--bad)}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+td,th{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}
+th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase}
+.btn{display:inline-block;background:var(--ok);color:#06210f;font-weight:800;border-radius:10px;padding:6px 12px;text-decoration:none;font-size:13px}
+a{color:inherit}
+#lock{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9}
+#lock form{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px;width:min(320px,90vw);text-align:center}
+#lock input{width:100%;font-size:28px;text-align:center;letter-spacing:10px;padding:10px;border-radius:12px;border:1px solid var(--line);background:#0e0e13;color:var(--fg);margin:14px 0}
+#lock button{width:100%;padding:12px;border:0;border-radius:12px;background:var(--red);color:#fff;font-weight:800;font-size:16px}
+#err{color:var(--bad);font-size:13px;min-height:18px}
+@media (max-width:520px){.tile .v{font-size:24px}.reel img{width:80px}}
+</style>
+</head>
+<body>
+<div id="lock"><form id="pw"><div style="font-weight:800;font-size:18px">Du entscheidest <span style="color:var(--red)">Studio</span></div>
+<input id="code" type="password" inputmode="numeric" autocomplete="current-password" placeholder="••••" autofocus>
+<div id="err"></div><button>Увійти</button></form></div>
+
+<div class="wrap" id="app" hidden>
+<header><h1>Du entscheidest <span>Studio</span></h1><div class="stand" id="stand">—</div></header>
+
+<div class="tiles">
+ <div class="tile"><div class="k">Підписники</div><div class="v" id="fol">—</div><div class="d" id="fold">—</div></div>
+ <div class="tile"><div class="k">Перегляди всього</div><div class="v" id="views">—</div><div class="d" id="viewsd">—</div></div>
+ <div class="tile"><div class="k">Лайки всього</div><div class="v" id="likes">—</div><div class="d" id="comm">—</div></div>
+ <div class="tile"><div class="k">Сер. досмотр</div><div class="v" id="ret">—</div><div class="d" id="retd">середній % від тривалості</div></div>
+</div>
+
+<h2>Ріст підписників</h2>
+<div class="chart"><svg id="chart" viewBox="0 0 600 160" preserveAspectRatio="none"></svg></div>
+
+<h2>Рілси</h2>
+<div class="reels" id="reels"></div>
+
+<h2>Розклад і схвалення</h2>
+<table><thead><tr><th>Коли</th><th>Серія</th><th>Статус</th><th></th></tr></thead><tbody id="sched"></tbody></table>
+<p class="stand">Цифри оновлюються автоматично кожні 5 хв · сторінка — щохвилини.</p>
+</div>
+
+<script>
+const HASH = '9d45a4710a9abc4e87cac3a7bc71ca46b79c2cbcce4a01a1f83184f6878744c7';
+const fmt = n => n == null ? '—' : Number(n).toLocaleString('de-DE');
+async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function unlock(){document.getElementById('lock').remove();document.getElementById('app').hidden=false;load();setInterval(load,60000)}
+try{ if(localStorage.getItem('studio_ok')===HASH) unlock() }catch(e){}
+document.getElementById('pw').addEventListener('submit',async e=>{e.preventDefault();
+  if(await sha(document.getElementById('code').value)===HASH){try{localStorage.setItem('studio_ok',HASH)}catch(e){};unlock()}
+  else document.getElementById('err').textContent='Невірний пароль'});
+
+function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+
+async function load(){
+  const q='?t='+Date.now();
+  const [st,hist,sch]=await Promise.all(['data/stats.json','data/history.json','data/schedule.json'].map(u=>fetch(u+q).then(r=>r.ok?r.json():null).catch(()=>null)));
+  if(!st) return;
+  document.getElementById('stand').textContent='Оновлено: '+new Date(st.stand).toLocaleString('uk-UA',{hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit'});
+  const reels=st.reels||[];
+  const tv=reels.reduce((a,r)=>a+r.aufrufe,0), tl=reels.reduce((a,r)=>a+r.likes,0), tc=reels.reduce((a,r)=>a+r.kommentare,0);
+  document.getElementById('fol').textContent=fmt(st.follower);
+  document.getElementById('views').textContent=fmt(tv);
+  document.getElementById('likes').textContent=fmt(tl);
+  document.getElementById('comm').textContent=fmt(tc)+' коментарів';
+  const rs=reels.filter(r=>r.durchsicht!=null&&r.aufrufe>50);
+  document.getElementById('ret').textContent=rs.length?Math.round(rs.reduce((a,r)=>a+r.durchsicht,0)/rs.length)+'%':'—';
+  // deltas vs ~24 h ago
+  if(hist&&hist.length){
+    const now=Date.parse(st.stand), past=hist.find(h=>now-Date.parse(h.t)<=24*3600e3)||hist[0];
+    const df=st.follower-past.f, dv=tv-Object.values(past.v||{}).reduce((a,b)=>a+b,0);
+    const fd=document.getElementById('fold'); fd.textContent=(df>=0?'+':'')+df+' за 24 год'; fd.className='d '+(df>=0?'up':'down');
+    const vd=document.getElementById('viewsd'); vd.textContent=(dv>=0?'+':'')+fmt(dv)+' за 24 год'; vd.className='d '+(dv>=0?'up':'down');
+    drawChart(hist);
+  }
+  const box=document.getElementById('reels'); box.textContent='';
+  for(const r of reels){
+    const card=el('a','reel'); card.href=r.link; card.target='_blank'; card.rel='noopener';
+    if(r.bild){const im=el('img');im.src=r.bild;im.alt='';im.loading='lazy';card.appendChild(im)}
+    const b=el('div','body'); const s=el('div','s',r.serie); s.appendChild(el('small',null,r.folge));
+    const ageH=(Date.now()-Date.parse(r.zeit))/3600e3;
+    if(ageH<=3&&r.aufrufe>=1000) s.appendChild(el('span','tag hot','злітає'));
+    if(ageH>=1&&ageH<=6&&r.aufrufe<100) s.appendChild(el('span','tag cold','слабко'));
+    b.appendChild(s); b.appendChild(el('div','t',r.titel));
+    const nums=el('div','nums');
+    for(const [k,v] of [['перегляди',fmt(r.aufrufe)],['лайки',fmt(r.likes)],['коменти',fmt(r.kommentare)],['поширення',fmt(r.geteilt)],['збереження',fmt(r.gespeichert)],['досмотр',r.durchsicht!=null?r.durchsicht+'% · '+r.watch_s+' с':'—']]){
+      const d=el('div'); d.appendChild(el('b',null,v)); d.appendChild(el('span',null,k)); nums.appendChild(d)}
+    b.appendChild(nums);
+    const sv=r.stimmen||{}, tot=(sv.a||0)+(sv.b||0);
+    const bar=el('div','bar'); const ia=el('i'); ia.style.background='var(--a)'; ia.style.width=(tot?100*sv.a/tot:50)+'%';
+    const ib=el('i'); ib.style.background='var(--b)'; ib.style.width=(tot?100*sv.b/tot:50)+'%'; bar.appendChild(ia); bar.appendChild(ib);
+    if(!tot) bar.style.opacity=.3;
+    b.appendChild(bar);
+    const v=el('div','vote'); v.appendChild(el('span',null,'A: '+(sv.a||0)));
+    v.appendChild(el('span',null,sv.lesbar?'голоси з коментарів':'голоси: потрібен Live у Meta'));
+    v.appendChild(el('span',null,'B: '+(sv.b||0))); b.appendChild(v);
+    card.appendChild(b); box.appendChild(card);
+  }
+  const tb=document.getElementById('sched'); tb.textContent='';
+  for(const p of (sch||[])){
+    const tr=el('tr'); tr.appendChild(el('td',null,p.wann)); tr.appendChild(el('td',null,p.serie+' · '+p.folge)); tr.appendChild(el('td',null,p.status));
+    const td=el('td'); const a=el('a','btn','✅ Схвалити');
+    a.href='https://github.com/Mxcween/duentscheidest-media/issues/new?title='+encodeURIComponent('✅ '+p.id)+'&body='+encodeURIComponent('Схвалено з дашборда: '+p.serie+' '+p.folge);
+    a.target='_blank'; a.rel='noopener'; td.appendChild(a); tr.appendChild(td); tb.appendChild(tr)}
+}
+
+function drawChart(h){
+  const svg=document.getElementById('chart'); svg.textContent='';
+  const pts=h.map(x=>[Date.parse(x.t),x.f]); if(pts.length<2) return;
+  const t0=pts[0][0], t1=pts[pts.length-1][0], f0=Math.min(...pts.map(p=>p[1])), f1=Math.max(...pts.map(p=>p[1]));
+  const X=t=>(t-t0)/(t1-t0||1)*590+5, Y=f=>150-(f-f0)/((f1-f0)||1)*130;
+  const ns='http://www.w3.org/2000/svg', path=document.createElementNS(ns,'path');
+  path.setAttribute('d',pts.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join(''));
+  path.setAttribute('fill','none'); path.setAttribute('stroke','#e8342c'); path.setAttribute('stroke-width','2.5'); path.setAttribute('vector-effect','non-scaling-stroke');
+  svg.appendChild(path);
+  for(const [txt,y] of [[f1,18],[f0,150]]){const t=document.createElementNS(ns,'text');t.setAttribute('x','8');t.setAttribute('y',y);t.setAttribute('fill','#9a9aa6');t.setAttribute('font-size','12');t.textContent=txt;svg.appendChild(t)}
+}
+</script>
+</body>
+</html>
