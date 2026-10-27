@@ -1,9 +1,16 @@
 [
  {
   "wann": "2026-10-27 18:00",
+  "serie": "NACHTDIENST",
+  "folge": "Teil 1",
+  "status": "готово, QA OK, пост заплановано",
+  "id": "nacht-teil1"
+ },
+ {
+  "wann": "2026-10-28 (offen)",
   "serie": "30 TAGE",
   "folge": "Teil 2",
-  "status": "сценарію ще нема",
+  "status": "перенесено: 18:00 зайняв NACHTDIENST",
   "id": "tage-teil2"
  },
  {
