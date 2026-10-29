@@ -1,37 +1,121 @@
 [
  {
-  "wann": "2026-10-27 17:24",
-  "serie": "NACHTDIENST",
-  "folge": "Teil 1",
-  "status": "опубліковано",
-  "id": "nacht-teil1"
+  "wann": "2026-10-29 13:00",
+  "serie": "СЗТ",
+  "folge": "#2",
+  "status": "сценарій чекає «го» (до 11:00)",
+  "id": "szt-2"
  },
  {
-  "wann": "2026-10-28 (offen)",
-  "serie": "30 TAGE",
-  "folge": "Teil 2",
-  "status": "перенесено: 18:00 зайняв NACHTDIENST",
-  "id": "tage-teil2"
+  "wann": "2026-10-29 18:00",
+  "serie": "ZWEI VON IHR",
+  "folge": "Teil 5",
+  "status": "сценарій чекає «го»",
+  "id": "zvi-teil5"
  },
  {
-  "wann": "2026-10-27 19:00",
+  "wann": "2026-10-30 13:00",
+  "serie": "DER LEERE STUHL",
+  "folge": "Teil 1 (пілот)",
+  "status": "сценарій чекає «го»",
+  "id": "stuhl-teil1"
+ },
+ {
+  "wann": "2026-10-30 18:00",
+  "serie": "ZWEI VON IHR",
+  "folge": "Teil 6",
+  "status": "план",
+  "id": "zvi-teil6"
+ },
+ {
+  "wann": "2026-10-31 13:00",
+  "serie": "СЗТ",
+  "folge": "Halloween-спецвипуск",
+  "status": "план",
+  "id": "szt-halloween"
+ },
+ {
+  "wann": "2026-10-31 18:00",
+  "serie": "ZWEI VON IHR",
+  "folge": "Teil 7",
+  "status": "план",
+  "id": "zvi-teil7"
+ },
+ {
+  "wann": "2026-11-01 13:00",
   "serie": "HOCHHAUS",
-  "folge": "Tag 3",
-  "status": "чекає голосів",
-  "id": "hh-tag3"
+  "folge": "Tag 4 (фінал)",
+  "status": "лише якщо Tag 3 ≥ 2 500 переглядів за 48 год, інакше пілот #2",
+  "id": "hh-tag4"
  },
  {
-  "wann": "2026-10-27 20:00",
+  "wann": "2026-11-01 18:00",
+  "serie": "ZWEI VON IHR",
+  "folge": "Teil 8 (фінал сезону)",
+  "status": "план",
+  "id": "zvi-teil8"
+ },
+ {
+  "wann": "2026-11-02 13:00",
+  "serie": "СЗТ",
+  "folge": "#3",
+  "status": "план",
+  "id": "szt-3"
+ },
+ {
+  "wann": "2026-11-02 18:00",
+  "serie": "ZWEI VON IHR",
+  "folge": "сезон 2 / Teil 2 пілота",
+  "status": "план",
+  "id": "flag-0211"
+ },
+ {
+  "wann": "2026-11-03 13:00",
+  "serie": "Пілот",
+  "folge": "#3",
+  "status": "план",
+  "id": "pilot-3"
+ },
+ {
+  "wann": "2026-11-03 18:00",
+  "serie": "Флагман",
+  "folge": "—",
+  "status": "план",
+  "id": "flag-0311"
+ },
+ {
+  "wann": "2026-11-04 13:00",
+  "serie": "GUIDE",
+  "folge": "Карусель",
+  "status": "обіцяли в промо",
+  "id": "guide"
+ },
+ {
+  "wann": "2026-11-04 18:00",
+  "serie": "Флагман",
+  "folge": "—",
+  "status": "план",
+  "id": "flag-0411"
+ },
+ {
+  "wann": "пауза",
   "serie": "BRUNO",
   "folge": "Teil 3",
-  "status": "сценарій чекає «го»",
+  "status": "на паузі (стратегія 29.10)",
   "id": "bruno-teil3"
  },
  {
-  "wann": "2026-10-28 18:00",
-  "serie": "ZWEI VON IHR",
-  "folge": "Teil 4",
-  "status": "чекає голосів",
-  "id": "zvi-teil4"
+  "wann": "пауза",
+  "serie": "30 TAGE",
+  "folge": "Teil 2",
+  "status": "на паузі (стратегія 29.10)",
+  "id": "tage-teil2"
+ },
+ {
+  "wann": "пауза",
+  "serie": "NACHTDIENST",
+  "folge": "Teil 2",
+  "status": "на паузі: Teil 1 зник з акаунта",
+  "id": "nacht-teil2"
  }
 ]
