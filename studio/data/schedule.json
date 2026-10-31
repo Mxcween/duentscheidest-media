@@ -14,10 +14,10 @@
   "id": "zvi-teil5"
  },
  {
-  "wann": "2026-11-01 13:00 (пропозиція)",
+  "wann": "2026-11-01 13:00",
   "serie": "DER LEERE STUHL",
   "folge": "Teil 1 (пілот)",
-  "status": "сценарій чекає «го»",
+  "status": "в роботі (власник: «роби, запости»)",
   "id": "stuhl-teil1"
  },
  {
@@ -37,8 +37,8 @@
  {
   "wann": "2026-10-31 18:00",
   "serie": "ZWEI VON IHR",
-  "folge": "Teil 6",
-  "status": "чекає вибору гілки A/B і «го»",
+  "folge": "Teil 6 «Die Frau aus der S8»",
+  "status": "готово, QA OK — автопублікація 17:43",
   "id": "zvi-teil7"
  },
  {
