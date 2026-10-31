@@ -14,31 +14,31 @@
   "id": "zvi-teil5"
  },
  {
-  "wann": "2026-10-30 13:00",
+  "wann": "2026-11-01 13:00 (пропозиція)",
   "serie": "DER LEERE STUHL",
   "folge": "Teil 1 (пілот)",
-  "status": "сценарій чекає «го» (13:00 вже не встигаємо)",
+  "status": "сценарій чекає «го»",
   "id": "stuhl-teil1"
  },
  {
   "wann": "2026-10-30 18:00",
   "serie": "ZWEI VON IHR",
   "folge": "Teil 6",
-  "status": "гілка й сценарій — після голосів 12:00, чекає «го»",
+  "status": "не вийшла 30.10: гілку (A/B) не обрано",
   "id": "zvi-teil6"
  },
  {
   "wann": "2026-10-31 13:00",
   "serie": "СЗТ",
   "folge": "Halloween-спецвипуск",
-  "status": "план",
+  "status": "сценарію й «го» немає",
   "id": "szt-halloween"
  },
  {
   "wann": "2026-10-31 18:00",
   "serie": "ZWEI VON IHR",
-  "folge": "Teil 7",
-  "status": "план",
+  "folge": "Teil 6",
+  "status": "чекає вибору гілки A/B і «го»",
   "id": "zvi-teil7"
  },
  {
